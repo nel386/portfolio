@@ -3,7 +3,7 @@ import './home.scss';
 
 const Home = () => {
   return (
-    <div className="home">
+    <section className="home" id='home'>
       <h1 className="home-title">Tu Nombre</h1>
       <p className="home-description">
         Desarrollador web especializado en React y TypeScript.
@@ -11,7 +11,7 @@ const Home = () => {
       <a href="#projects" className="home-cta">
         Ver mis proyectos
       </a>
-    </div>
+    </section>
   );
 };
 

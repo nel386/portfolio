@@ -1,31 +1,71 @@
+import React, { useEffect } from "react";
+import "./App.scss";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./views/Home/Home";
-import About from "./views/About/About"
+import About from "./views/About/About";
 import Skills from "./views/Skills/Skills";
 import Projects from "./views/Projects/Projects";
 import Contact from "./views/Contact/Contact";
+import { animateScroll as scroll } from "react-scroll";
 
-function App() {
+const App = () => {
+  const sections = ["home", "about", "skills", "projects", "contact"];
+
+  const handleScroll = (e: WheelEvent) => {
+    const currentIndex = sections.findIndex((id) => {
+      const element = document.getElementById(id);
+      return element && element.getBoundingClientRect().top >= 0;
+    });
+
+    if (e.deltaY > 0 && currentIndex < sections.length - 1) {
+      scroll.scrollTo(
+        document.getElementById(sections[currentIndex + 1])!.offsetTop,
+        {
+          duration: 800,
+          smooth: "easeInOutCubic",
+        }
+      );
+    } else if (e.deltaY < 0 && currentIndex > 0) {
+      scroll.scrollTo(
+        document.getElementById(sections[currentIndex - 1])!.offsetTop,
+        {
+          duration: 800,
+          smooth: "easeInOutCubic",
+        }
+      );
+    } else if (e.deltaY > 0 && currentIndex === sections.length - 1) {
+      e.preventDefault();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("wheel", handleScroll);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
+
   return (
-    <div>
+    <div className="App">
       <Navbar />
-      <div id="home">
+      <section id="home">
         <Home />
-      </div>
-      <div id="about">
+      </section>
+      <section id="about">
         <About />
-      </div>
-      <div id="skills">
+      </section>
+      <section id="skills">
         <Skills />
-      </div>
-      <div id="projects">
+      </section>
+      <section id="projects">
         <Projects />
-      </div>
-      <div id="contact">
+      </section>
+      <section id="contact">
         <Contact />
-      </div>
+      </section>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,30 +1,31 @@
 .about {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .about-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .about-description {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .about-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .about-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .about-list li {
-    margin-bottom: 1rem;
-  }
-  
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+}
+
+.about-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.about-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-list li {
+  margin-bottom: 1rem;
+}

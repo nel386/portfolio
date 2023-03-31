@@ -1,23 +1,23 @@
-import React from 'react';
-import './projects.scss';
+import React from "react";
+import "./projects.scss";
 
 const projectData = [
   {
-    title: 'Proyecto 1',
-    description: 'Descripción del proyecto 1',
-    imageUrl: 'https://via.placeholder.com/300',
+    title: "Proyecto 1",
+    description: "Descripción del proyecto 1",
+    imageUrl: "https://via.placeholder.com/300",
   },
   {
-    title: 'Proyecto 2',
-    description: 'Descripción del proyecto 2',
-    imageUrl: 'https://via.placeholder.com/300',
+    title: "Proyecto 2",
+    description: "Descripción del proyecto 2",
+    imageUrl: "https://via.placeholder.com/300",
   },
   // ... Agrega más proyectos aquí
 ];
 
 const Projects = () => {
   return (
-    <div className="projects">
+    <section className="projects" id="projects">
       <h2 className="projects-title">Proyectos</h2>
       <div className="projects-grid">
         {projectData.map((project, index) => (
@@ -28,7 +28,7 @@ const Projects = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

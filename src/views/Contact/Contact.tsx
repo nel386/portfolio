@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import './contact.scss';
+import React, { useState } from "react";
+import "./contact.scss";
 
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     // Aquí puedes agregar el código para manejar el envío del formulario, por ejemplo, enviar un correo electrónico o almacenar los datos en una base de datos.
-    console.log('Nombre:', name);
-    console.log('Correo electrónico:', email);
-    console.log('Mensaje:', message);
+    console.log("Nombre:", name);
+    console.log("Correo electrónico:", email);
+    console.log("Mensaje:", message);
   };
 
   return (
-    <div className="contact">
+    <section className="contact" id="contact">
       <h2 className="contact-title">Contacto</h2>
       <form className="contact-form" onSubmit={handleSubmit}>
         <div className="form-group">
@@ -52,7 +52,7 @@ const Contact = () => {
         </div>
         <button type="submit">Enviar</button>
       </form>
-    </div>
+    </section>
   );
 };
 

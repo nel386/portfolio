@@ -1,67 +1,48 @@
+import React, { useState } from "react";
 import { Link } from "react-scroll";
+import { stack as Menu } from "react-burger-menu";
 import "./navbar.scss";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuStateChange = (state: {
+    isOpen: boolean | ((prevState: boolean) => boolean);
+  }) => {
+    setMenuOpen(state.isOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const menuItems = [
+    { id: "home", text: "Inicio" },
+    { id: "about", text: "Acerca de" },
+    { id: "skills", text: "Habilidades" },
+    { id: "projects", text: "Proyectos" },
+    { id: "contact", text: "Contacto" },
+  ];
+
   return (
     <nav className="navbar">
-      <div className="navbar-logo">TuLogo</div>
-      <ul className="navbar-menu">
-        <li className="navbar-item">
+      <div className="navbar-logo">LOGO</div>
+      <Menu right isOpen={menuOpen} onStateChange={handleMenuStateChange}>
+        {menuItems.map((item) => (
           <Link
-            activeClass="active"
-            to="home"
+            key={item.id}
+            className="menu-item"
+            to={item.id}
             spy={true}
             smooth={true}
             duration={500}
+            offset={-70}
+            onClick={closeMenu}
           >
-            Inicio
+            {item.text}
           </Link>
-        </li>
-        <li className="navbar-item">
-          <Link
-            activeClass="active"
-            to="about"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Acerca de
-          </Link>
-        </li>
-        <li className="navbar-item">
-          <Link
-            activeClass="active"
-            to="skills"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Habilidades
-          </Link>
-        </li>
-        <li className="navbar-item">
-          <Link
-            activeClass="active"
-            to="projects"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Proyectos
-          </Link>
-        </li>
-        <li className="navbar-item">
-          <Link
-            activeClass="active"
-            to="contact"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            Contacto
-          </Link>
-        </li>
-      </ul>
+        ))}
+      </Menu>
     </nav>
   );
 };

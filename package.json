@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "portfolio_nel386",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,7 +11,9 @@
     "@types/react": "^18.0.29",
     "@types/react-dom": "^18.0.11",
     "react": "^18.2.0",
+    "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.4.3",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
     "sass": "^1.60.0",
@@ -43,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-burger-menu": "^2.8.3",
     "@types/react-scroll": "^1.8.6"
   }
 }
