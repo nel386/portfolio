@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { stack as Menu } from "react-burger-menu";
 import "./navbar.scss";
+import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,6 +44,7 @@ const Navbar: React.FC = () => {
           </Link>
         ))}
       </Menu>
+      <ScrollIndicator menuItems={menuItems} />
     </nav>
   );
 };
