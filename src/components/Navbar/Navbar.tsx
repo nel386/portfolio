@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll";
 import { stack as Menu } from "react-burger-menu";
-import "./navbar.scss";
+import { MdClose } from "react-icons/md";
+import { RiMenu3Line } from "react-icons/ri";
+import { Link } from "react-scroll";
 import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
+import "./navbar.scss";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,7 +30,15 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">LOGO</div>
-      <Menu right isOpen={menuOpen} onStateChange={handleMenuStateChange}>
+      <Menu
+        right
+        isOpen={menuOpen}
+        onStateChange={handleMenuStateChange}
+        customBurgerIcon={<RiMenu3Line size={36} color="#373a47" />}
+        customCrossIcon={
+          <MdClose size={36} color="#bdc3c7" onClick={() => closeMenu()} />
+        }
+      >
         {menuItems.map((item) => (
           <Link
             key={item.id}
@@ -44,6 +54,7 @@ const Navbar: React.FC = () => {
           </Link>
         ))}
       </Menu>
+
       <ScrollIndicator menuItems={menuItems} />
     </nav>
   );

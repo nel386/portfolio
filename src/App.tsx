@@ -7,9 +7,10 @@ import Skills from "./views/Skills/Skills";
 import Projects from "./views/Projects/Projects";
 import Contact from "./views/Contact/Contact";
 import { animateScroll as scroll } from "react-scroll";
+import Footer from "./views/Footer/Footer";
 
 const App = () => {
-  const sections = ["home", "about", "skills", "projects", "contact"];
+  const sections = ["home", "about", "skills", "projects", "contact", "footer"];
 
   const handleScroll = (e: WheelEvent) => {
     const currentIndex = sections.findIndex((id) => {
@@ -39,10 +40,11 @@ const App = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("wheel", handleScroll);
+    const handleWheelEvent = (e: WheelEvent) => handleScroll(e);
+    window.addEventListener("wheel", handleWheelEvent, { passive: false });
 
     return () => {
-      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("wheel", handleWheelEvent);
     };
   }, []);
 
@@ -63,6 +65,9 @@ const App = () => {
       </section>
       <section id="contact">
         <Contact />
+      </section>
+      <section id="footer">
+        <Footer />
       </section>
     </div>
   );
