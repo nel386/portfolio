@@ -5,6 +5,7 @@ import { RiMenu3Line } from "react-icons/ri";
 import { Link } from "react-scroll";
 import ScrollIndicator from "../ScrollIndicator/ScrollIndicator";
 import "./navbar.scss";
+import { SvgLogo } from "../../utils/Svgs";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,7 +30,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">LOGO</div>
+      <div className="navbar-logo"><SvgLogo/></div>
       <Menu
         right
         isOpen={menuOpen}
