@@ -1,5 +1,4 @@
 import {
-  SvgJS,
   SvgTS,
   SvgReact,
   SvgBootstrap,
@@ -13,120 +12,79 @@ import {
   SvgExpress,
   SvgMySQL,
   SvgDocker,
+  SvgJS,
 } from "../../utils/Svgs";
 
 const skillData = [
   {
+    id: 1,
     name: "JavaScript",
-    icon: (
-      <>
-        <SvgJS />
-      </>
-    ),
+    icon: <SvgJS />,
   },
   {
+    id: 2,
     name: "TypeScript",
-    icon: (
-      <>
-        <SvgTS />
-      </>
-    ),
+    icon: <SvgTS />,
   },
   {
+    id: 3,
     name: "React",
-    icon: (
-      <>
-        <SvgReact />
-      </>
-    ),
+    icon: <SvgReact />,
   },
   {
+    id: 4,
     name: "Bootstrap",
-    icon: (
-      <>
-        <SvgBootstrap />
-      </>
-    ),
+    icon: <SvgBootstrap />,
   },
   {
+    id: 5,
     name: "CSS",
-    icon: (
-      <>
-        <SvgCSS />
-      </>
-    ),
+    icon: <SvgCSS />,
   },
   {
+    id: 6,
     name: "Git",
-    icon: (
-      <>
-        <SvgGit />
-      </>
-    ),
+    icon: <SvgGit />,
   },
   {
+    id: 7,
     name: "HTML",
-    icon: (
-      <>
-        <SvgHTML />
-      </>
-    ),
+    icon: <SvgHTML />,
   },
   {
+    id: 8,
     name: "Node",
-    icon: (
-      <>
-        <SvgNode />
-      </>
-    ),
+    icon: <SvgNode />,
   },
   {
+    id: 9,
     name: "Sass",
-    icon: (
-      <>
-        <SvgSass />
-      </>
-    ),
+    icon: <SvgSass />,
   },
   {
+    id: 10,
     name: "Visual Studio Code",
-    icon: (
-      <>
-        <SvgVisualStudioCode />
-      </>
-    ),
+    icon: <SvgVisualStudioCode />,
   },
   {
+    id: 11,
     name: "mongoDB",
-    icon: (
-      <>
-        <SvgMongoDB />
-      </>
-    ),
+    icon: <SvgMongoDB />,
   },
   {
+    id: 12,
     name: "express",
-    icon: (
-      <>
-        <SvgExpress />
-      </>
-    ),
+    icon: <SvgExpress />,
   },
   {
+    id: 13,
     name: "MySQL",
-    icon: (
-      <>
-        <SvgMySQL />
-      </>
-    ),
+    icon: <SvgMySQL />,
   },
   {
+    id: 14,
     name: "Docker",
-    icon: (
-      <>
-        <SvgDocker />
-      </>
-    ),
+    icon: <SvgDocker />,
   },
 ];
 

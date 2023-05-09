@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 
 const Skills = () => {
   const [displayedSkills, setDisplayedSkills] = useState<typeof skillData>([]);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   const skillsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -42,16 +42,17 @@ const Skills = () => {
 
   const displaySkills = () => {
     if (displayedSkills.length === 0) {
-      let index = 0;
+      let index = -1;
 
       const interval = setInterval(() => {
-        setDisplayedSkills((prevState) => [...prevState, skillData[index]]);
         index++;
 
-        if (index === skillData.length) {
+        setDisplayedSkills((prevState) => [...prevState, skillData[index]]);
+
+        if (index === skillData.length - 1) {
           clearInterval(interval);
         }
-      }, 200);
+      }, 250);
     }
   };
 
@@ -61,8 +62,8 @@ const Skills = () => {
       <div className="skills-grid">
         {displayedSkills.map((skill, index) => (
           <Fade
-            key={index}
-            delay={200 * index}
+            key={skill.id}
+            delay={800}
             triggerOnce
             onVisibilityChange={(inView) => {
               if (inView) {
@@ -73,7 +74,7 @@ const Skills = () => {
                   if (skillCard) {
                     skillCard.classList.add("visible");
                   }
-                }, 200 * index);
+                }, 300 * index);
               }
             }}
           >
