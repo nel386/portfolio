@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 7rem;
   padding: 1rem;
   z-index: 1000;
   background-color: transparent;
@@ -16,23 +17,22 @@
   font-weight: bold;
 }
 
-//
-//
-//
-//
-//CSS React Burger Menu
 .bm-burger-button {
-  position: relative;
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  top: 3% !important;
+  right: 3% !important;
 }
 
 .bm-item {
-  display: block;
   text-decoration: none;
   color: #000;
   font-size: 1.2rem;
   padding: 0.7rem 1.5rem;
   cursor: pointer;
   transition: color 0.2s;
+  display: inline-block;
 
   &:hover {
     color: #666;
@@ -40,9 +40,8 @@
 }
 
 .bm-menu-wrap {
-  top: 0;
   height: 50% !important;
-  top: 5% !important;
+  top: 3% !important;
   right: 3% !important;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s;
   z-index: 1001 !important;
@@ -53,8 +52,6 @@
 
 .bm-menu {
   overflow-y: hidden !important;
-  background-color: #fff;
-  padding: 2.5em 1.5em;
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
@@ -65,20 +62,11 @@
   left: 0;
   background: rgba(70, 70, 70, 0.3) !important;
 }
-.bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  top: 5% !important;
-  right: 3% !important;
-}
 
-/* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: #373a47;
 }
 
-/* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
   background: #a90000;
 }
@@ -87,20 +75,13 @@
   background: #373a47 !important;
 }
 
-/* Color/shape of close button cross */
 .bm-cross {
   z-index: 1112 !important;
   position: absolute !important;
   cursor: pointer;
 }
 
-/* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
-}
-
-/* Individual item */
-.bm-item {
-  display: inline-block;
 }

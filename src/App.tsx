@@ -1,26 +1,31 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import { animateScroll as scroll } from "react-scroll";
 import "./App.scss";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./views/Home/Home";
 import About from "./views/About/About";
-import Skills from "./views/Skills/Skills";
-import Projects from "./views/Projects/Projects";
 import Contact from "./views/Contact/Contact";
-import { animateScroll as scroll } from "react-scroll";
 import Footer from "./views/Footer/Footer";
+import Home from "./views/Home/Home";
+import Projects from "./views/Projects/Projects";
+import Skills from "./views/Skills/Skills";
 
 const App = () => {
   const sections = ["home", "about", "skills", "projects", "contact", "footer"];
 
   const handleScroll = (e: WheelEvent) => {
-    const currentIndex = sections.findIndex((id) => {
+    const currentSection = sections.reduce((current, id) => {
       const element = document.getElementById(id);
-      return element && element.getBoundingClientRect().top >= 0;
-    });
+      return element &&
+        element.getBoundingClientRect().top < window.innerHeight / 2
+        ? id
+        : current;
+    }, "home");
+
+    const currentIndex = sections.indexOf(currentSection);
 
     if (e.deltaY > 0 && currentIndex < sections.length - 1) {
       scroll.scrollTo(
-        document.getElementById(sections[currentIndex + 1])!.offsetTop,
+        document.getElementById(sections[currentIndex + 1])!.offsetTop ,
         {
           duration: 800,
           smooth: "easeInOutCubic",
@@ -28,7 +33,7 @@ const App = () => {
       );
     } else if (e.deltaY < 0 && currentIndex > 0) {
       scroll.scrollTo(
-        document.getElementById(sections[currentIndex - 1])!.offsetTop,
+        document.getElementById(sections[currentIndex - 1])!.offsetTop ,
         {
           duration: 800,
           smooth: "easeInOutCubic",
