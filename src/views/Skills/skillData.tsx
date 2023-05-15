@@ -43,28 +43,28 @@ const skillData = [
   },
   {
     id: 6,
-    name: "Git",
-    icon: <SvgGit />,
-  },
-  {
-    id: 7,
     name: "HTML",
     icon: <SvgHTML />,
   },
   {
-    id: 8,
-    name: "Node",
-    icon: <SvgNode />,
-  },
-  {
-    id: 9,
+    id: 7,
     name: "Sass",
     icon: <SvgSass />,
   },
   {
-    id: 10,
+    id: 8,
+    name: "Git",
+    icon: <SvgGit />,
+  },
+  {
+    id: 9,
     name: "Visual Studio Code",
     icon: <SvgVisualStudioCode />,
+  },
+  {
+    id: 10,
+    name: "Node",
+    icon: <SvgNode />,
   },
   {
     id: 11,

@@ -1,6 +1,6 @@
 .skills {
   padding: 2rem;
-  max-width: 800px;
+  max-width: 50%;
   margin: 0 auto;
   padding-top: 12rem;
   min-height: 100vh;
@@ -15,8 +15,8 @@
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+  gap: 3rem;
+  justify-content: space-evenly;
 }
 
 .skill-card {
@@ -24,13 +24,16 @@
   flex-direction: column;
   align-items: center;
   width: 100px;
-  background-color: #f0f0f0;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  // background-color: #f0f0f0;
+  padding: 0.5rem;
+  border-radius: 10px;
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   transition: opacity 1s, transform 1s;
+  svg {
+    height: 85px;
+  }
 }
 
 .skill-card.visible {
@@ -39,6 +42,9 @@
 }
 
 .skill-name {
-  font-size: 1rem;
+  color: #242424;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  font-weight: 500;
   margin-top: 1rem;
 }

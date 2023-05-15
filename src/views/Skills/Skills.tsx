@@ -62,7 +62,7 @@ const Skills = () => {
       <div className="skills-grid">
         {displayedSkills.map((skill, index) => (
           <Fade
-            key={skill.id}
+            key={index}
             delay={800}
             triggerOnce
             onVisibilityChange={(inView) => {
